@@ -5,9 +5,10 @@
         xmlns:local="clr-namespace:UseOxyPlot"
         Title="MainWindow" Height="350" Width="525">
     <Window.DataContext>
-        <local:MainViewModel/>
+        <local:MainViewModel x:Name="mv"/>
     </Window.DataContext>
     <Grid>
+        
         <oxy:Plot x:Name="oxPlot" Title="{Binding Title}" TitleColor="BlueViolet" 
                   LegendBackground="FloralWhite" LegendPlacement="Outside" LegendPosition="TopCenter" LegendOrientation="Horizontal">
             <oxy:Plot.Series>
@@ -26,6 +27,15 @@
                 
             </oxy:Plot.Axes>
         </oxy:Plot>
+        <StackPanel>
+            <Button x:Name="btnAddPt" Click="btnAddPt_Click" Content="Add Point" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75"/>
+            <StackPanel Orientation="Horizontal">
+                <TextBox x:Name="txtX" Height="23" TextWrapping="Wrap" Text="X" Width="50" Margin="2"/>
+                <TextBox x:Name="txtY" Height="23" TextWrapping="Wrap" Text="Y" Width="50" Margin="2"/>
+            </StackPanel>
+        </StackPanel>
+        
+
     </Grid>
 </Window>
 

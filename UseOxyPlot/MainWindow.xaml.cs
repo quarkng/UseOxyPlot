@@ -30,5 +30,17 @@ namespace UseOxyPlot
             InitializeComponent();
         }
 
+        private void btnAddPt_Click(object sender, RoutedEventArgs e)
+        {
+            double x, y;
+
+            if (Double.TryParse(txtX.Text, out x) && Double.TryParse(txtY.Text, out y))
+            {
+                mv.Points.Add(new DataPoint(x, y));
+                oxPlot.InvalidatePlot(true);
+            }
+
+        }
+
     }
 }
