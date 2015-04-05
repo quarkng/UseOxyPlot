@@ -9,7 +9,7 @@
     </Window.DataContext>
     <Grid>
         <oxy:Plot x:Name="oxPlot" Title="{Binding Title}" TitleColor="BlueViolet" 
-                  LegendBackground="FloralWhite" LegendPlacement="Outside" LegendPosition="TopCenter">
+                  LegendBackground="FloralWhite" LegendPlacement="Outside" LegendPosition="TopCenter" LegendOrientation="Horizontal">
             <oxy:Plot.Series>
                 <oxy:LineSeries Title="Series 1 - Points" ItemsSource="{Binding Points}" />
                 <oxy:LineSeries Title="Series 2 - Points" ItemsSource="{Binding Points}" YAxisKey="Upper"/>
