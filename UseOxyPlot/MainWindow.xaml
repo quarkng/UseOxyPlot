@@ -8,10 +8,37 @@
         <local:MainViewModel/>
     </Window.DataContext>
     <Grid>
-        <oxy:Plot x:Name="oxPlot" Title="{Binding Title}">
+        <oxy:Plot x:Name="oxPlot" Title="{Binding Title}" TitleColor="BlueViolet" 
+                  LegendBackground="FloralWhite" LegendPlacement="Outside" LegendPosition="TopCenter">
             <oxy:Plot.Series>
-                <oxy:LineSeries ItemsSource="{Binding Points}"/>
+                <oxy:LineSeries Title="Series 1 - Points" ItemsSource="{Binding Points}" />
+                <oxy:LineSeries Title="Series 2 - Points" ItemsSource="{Binding Points}" YAxisKey="Upper"/>
             </oxy:Plot.Series>
+            <oxy:Plot.Axes>
+                <oxy:LinearAxis Title="Y-axis" Key="Lower" StartPosition="0" EndPosition="0.45" IsZoomEnabled="False" IsPanEnabled="False"
+                                Minimum="-20" MajorGridlineStyle="LongDash" MinorGridlineStyle="Dot"/>
+
+                <oxy:LinearAxis Title="Second Y-axis" Key="Upper" StartPosition="0.55" EndPosition="1.00" IsZoomEnabled="False" IsPanEnabled="False"
+                               Minimum="0" MajorGridlineStyle="LongDash" MinorGridlineStyle="Dot"/>
+
+                <oxy:LinearAxis Title="X-axis" Unit="X unit" Position="Bottom" IsZoomEnabled="False" IsPanEnabled="False"
+                                MajorGridlineStyle="LongDash" MinorGridlineStyle="Dot"/>
+                
+            </oxy:Plot.Axes>
         </oxy:Plot>
     </Grid>
 </Window>
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
